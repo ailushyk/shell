@@ -1,0 +1,8 @@
+{
+  "exposes": {},
+  "remotes": {
+    "dashboard": "dashboard",
+    "app2": "app2",
+    "ui": "uivtcd"
+  }
+}
