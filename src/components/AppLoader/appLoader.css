@@ -1,0 +1,42 @@
+.loading-wrap {
+  position: fixed;
+  bottom: -3vh;
+  left: 0;
+  right: 0;
+  background: rgba(144, 15, 15, 0.5);
+
+  opacity: 0;
+  animation-duration: 500ms;
+  animation-name: blink;
+  /*animation-timing-function: ease-in;*/
+}
+
+.custom-shape-divider-bottom-1630605953 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1630605953 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1px);
+  height: 248px;
+}
+
+.custom-shape-divider-bottom-1630605953 .shape-fill {
+  fill: rgba(144, 15, 15, 0.5);
+}
+
+@keyframes blink {
+  25% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+  }
+}

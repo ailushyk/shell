@@ -20,6 +20,7 @@ module.exports = (env, argv) => {
 
     devServer: {
       port: 3000,
+      historyApiFallback: true,
     },
 
     module: {
@@ -74,6 +75,11 @@ module.exports = (env, argv) => {
             singleton: true,
             eager: true,
             requiredVersion: deps['react-dom'],
+          },
+          'react-router-dom': {
+            singleton: true,
+            // eager: true,
+            requiredVersion: deps['react-router-dom'],
           },
         },
       }),

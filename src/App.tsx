@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
-import { Space } from 'ui/elements';
-import { Loading } from './components/Loading';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { DelayedFallback } from './components/AppLoader/DelayedFallback';
 
 const DashboardPage = React.lazy(() => {
   return Promise.all([
@@ -8,13 +8,23 @@ const DashboardPage = React.lazy(() => {
     new Promise((resolve) => setTimeout(resolve, 500)),
   ]).then(([moduleExports]) => moduleExports);
 });
+// const App1Page = React.lazy(() => import('app1/App1Page'));
+const App2Page = React.lazy(() => import('app2/App2Page'));
+const NotFound = React.lazy(() => import('ui/NotFound'));
 
-const App = () => (
-  <Space>
-    <Suspense fallback={<Loading />}>
-      <DashboardPage />
+const App = () => {
+  return (
+    <Suspense fallback={<DelayedFallback />}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          {/*<Route path="/app1" element={<App1Page />} />*/}
+          <Route path="app2" element={<App2Page />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </Suspense>
-  </Space>
-);
+  );
+};
 
 export default App;

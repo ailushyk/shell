@@ -3,5 +3,17 @@
     "react-app",
     "react-app/jest",
     "prettier"
-  ]
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true
+      }
+    ]
+  }
 }
