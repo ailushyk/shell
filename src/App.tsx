@@ -11,7 +11,7 @@ const DashboardPage = React.lazy(() => {
 });
 // const App1Page = React.lazy(() => import('app1/App1Page'));
 const App2Page = React.lazy(() => import('app2/App2Page'));
-const NotFound = React.lazy(() => import('ui/NotFound'));
+const NotFound = React.lazy(() => import('ui/pages/NotFound'));
 
 const App = () => {
   return (
